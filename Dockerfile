@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ros:humble-ros-base
 ARG TARGETPLATFORM
 
 WORKDIR /tmp
