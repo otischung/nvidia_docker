@@ -19,10 +19,10 @@ RUN apt update && \
         apt -y install cuda-toolkit-12-4; \
     elif [ "$TARGETPLATFORM" = "linux/arm64" ]; then \
         echo "Install cuda in arm64." >> log.txt && \
-        axel -n 20 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/arm64/cuda-keyring_1.1-1_all.deb && \
+        axel -n 20 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/sbsa/cuda-keyring_1.1-1_all.deb && \
         dpkg -i cuda-keyring_1.1-1_all.deb && \
         apt update && \
-        apt -y install cuda-toolkit-12-4 cuda-compat-12-4; \
+        apt -y install cuda-toolkit-12-4; \
     else \
         echo "Error when installing cuda 12.4 update 1!!!" >> log.txt; \
     fi && \
@@ -36,7 +36,7 @@ RUN apt update && \
         apt -y install cudnn-cuda-12; \
     elif [ "$TARGETPLATFORM" = "linux/arm64" ]; then \
         echo "Install cudnn in arm64." >> log.txt && \
-        axel -n 20 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/arm64/cuda-keyring_1.1-1_all.deb && \
+        axel -n 20 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/sbsa/cuda-keyring_1.1-1_all.deb && \
         dpkg -i cuda-keyring_1.1-1_all.deb && \
         apt update && \
         apt -y install cudnn-cuda-12; \
